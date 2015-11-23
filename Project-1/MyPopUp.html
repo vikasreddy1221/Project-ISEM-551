@@ -1,0 +1,29 @@
+<html>
+<head>
+
+<script language="JavaScript">
+function getParameters() {
+var parameters = {},
+        keyValuePairs = document.URL.split('?')
+               .pop()
+               .split('&');
+
+    for (var i = 0, p; i < keyValuePairs.length; i++) {
+           p = keyValuePairs[i].split('=');
+           parameters[ p[0] ] =  p[1];
+    }     
+
+    return parameters;	
+}
+
+function ShowData(){
+	 params=getParameters();
+	for( var i in params ){
+    document.write( decodeURI(i) +" : " +decodeURI(params[i])+"<br><br>" );
+}          
+}
+</script>
+</head>
+<body onload="ShowData();">
+</body>
+</html>
